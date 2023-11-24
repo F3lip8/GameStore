@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+:root{
+    --dark-blue: #000430;
+    --blue: #000DA1;
+    --ligth-blue: #0053D9;
+    --ultra-ligth-blue: #4277cd;
+    --green:#27ae60;
+    --dark-color:#219150;
+    --black:#171717;
+    --light-color:#3f3f3f;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.5);
+}
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html{
+    
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding: 5rem 9%;
+}
+
+.header .header-1{
+    background-color: var(--dark-blue);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header .header-1 .logo{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 30px;
+    color: var(--ligth-blue);
+    filter: contrast(150%);
+}
+
+.header .header-1 .search-form{
+    width: 600px;
+    height: 32px;
+    border: rgb(2, 17, 22);
+    background: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: .5em;
+}
+
+.header .header-1 .search-form input{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 600px;
+    height: 32px;
+    border: rgb(2, 17, 22);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: .5em;
+    padding:0 19px;
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.header .header-1 .search-form label{
+    font-size: 20px;
+    padding-right: 10px;
+    color: black;
+    cursor: pointer;
+}
+
+
+.header .header-1 .search-form label:hover{
+    color: var(--ligth-blue);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+    font-size: 25px;
+    margin-left: 10px;
+    color: var(--ligth-blue);
+}
+
+.header .header-2{
+    background: var(--blue);
+}
+
+.header .header-2 .navbar{
+    text-align: center;
+}
+
+.header .header-2 .navbar a{
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.header .header-2 .navbar a:hover{
+    background: var(--ligth-blue);
+}
+
+.header .header-2.active{
+    position: fixed;
+    top: 0;left: 0; right: 0;
+    z-index: 1000;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--ligth-blue);
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: var(--box-shadow);
+}
+
+.btn:hover{
+    background-color: var(--blue);
+}
+
+.btn-carrinho{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--ultra-ligth-blue);
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: var(--box-shadow);
+}
+
+.btn-carrinho:hover{
+    background: var(--ligth-blue);
+}
+
+.login-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0; right:-105%;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form-container.active{
+    right: 0;
+}
+
+.login-form-container form{
+    background: #fff;
+    border: solid gray !important;
+    width: 40rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    margin: 2rem;
+}
+
+
+.login-form-container form h3{
+    font-size: 2.5rem;
+    color: var(--black);
+    text-align: center;
+}
+
+
+.login-form-container form span{
+    display: block;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+
+.login-form-container form .box{
+    width: 100%;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    border: 1px solid gray !important;
+    border-radius: .5rem;
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+
+.login-form-container form .checkbox{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem 0;
+}
+
+.login-form-container form .checkbox label{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+
+.login-form-container form .btn{
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+
+.login-form-container form p{
+    padding-top: .8rem;
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.login-form-container form p a{
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.login-form-container #close-login-btn{
+    color: #fff;
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+
+.search-section{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: -105%;
+    z-index: 10000;
+}
+
+.search-section .card{
+    width: 500px;
+    height: 80px;
+    display: flex;
+    border: 1px solid gray !important;
+}
+
+.search-section .card .image img{
+    height: 80px;
+}
+
+.search-section .card .content h3{
+    margin: 20px;
+}
+
+
+.title{
+    text-align: center;
+    margin-bottom: 2rem ;
+    position: relatives;
+}
+
+.title span{
+    font-size: 3rem;
+    color: #000000;;
+}
+
+.consoles .consoles-slider .box{
+    width: 250px;
+    margin: 0 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 0.5px solid black;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.consoles .consoles-slider .box .image{
+    padding: 1rem;
+    background: linear-gradient(15deg, #838b93 30%, #fff 30.1%);
+}
+
+.consoles .consoles-slider .box .image img{
+    height: 250px;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 5px rgb(67, 67, 67));
+}
+
+.consoles .consoles-slider .box .content{
+    background:  #838b93 ;
+    padding: 1.5rem;
+}
+
+.consoles .consoles-slider .box .content h3{
+    font-size: 15px;
+    color: var(--black);
+}
+
+.consoles .consoles-slider .box .content .price{
+    font-size: 2.2rem;
+    color: var(--black);
+    padding-top: 1rem;
+}
+
+.consoles .consoles-slider .box .content .price span{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    text-decoration: line-through;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev{
+    border: 0.5px solid gray;
+    height: 4rem !important;
+    width: 4rem !important;
+    color: var(--black) !important;
+    background: #fff;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    font-size: 2rem !important;
+}   
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    color: #fff !important;
+    background: var(--black);
+} 
+
+.home{
+    padding: 0;
+}
+
+.home .home-slider .slide{
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    padding-left: 7%;
+    background-size: cover;
+    background-position: center !important;
+}
+
+.home .home-slider .slide .content{
+    width: 600px;
+}
+
+.home .home-slider .slide .content h3{
+    color: #fff;
+    font-size: 4.5rem;
+}
+
+.home .home-slider .slide .content p{
+    color: rgb(154, 153, 153);
+    font-size: 1.5rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.home .home-slider .slide .image{
+    height: 26rem;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .home-slider .slide .image a img{
+    height: 26rem;
+    border-radius: 10px;
+}
+
+.home .swiper-button-next{
+    top: 90%;
+    right: 2rem;
+    border-radius: 5px;
+}
+
+.home .swiper-button-prev{
+    top: 90%;
+    right: 8rem;
+    left: auto;
+    border-radius: 5px;
+}
+
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    scroll-margin-block: 50px;
+  }
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 70% /* Could be more or less, depending on screen size */
+}
+
+.modal .modal-content .content-geral{
+    display: flex;
+}
+
+.modal .modal-content .content{
+    padding: 20px;
+}
+
+.modal .modal-content .image{
+    padding: 20px;
+}
+
+.modal .modal-content .image img{
+    height: 400px;
+}
+
+.modal .modal-content .botoes{
+    width: 100%;
+}
+
+.modal .modal-content .botoes a{
+    width: 90%;
+    text-align: center;
+}
+
+.modal .modal-content .detalhes{
+    padding-top: 20px;
+}
+  
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.destaques{
+    background: url(Imagens/mario-background2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.destaques .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.destaques .row .content{
+    flex: 1 1 42rem;
+}
+
+.destaques .row .game-slider{
+    flex: 1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.destaques .row .game-slider a img{
+    height: 25rem;
+    border-radius: 4px;
+}
+
+.destaques .row .game-slider a:hover img{
+    transform: scale(.9);
+}
+
+.destaques .row .content h3{
+    color: #fff;
+    font-size: 4.5rem;
+}
+
+.destaques .row .content p{
+    color: rgb(154, 153, 153);
+    font-size: 1.5rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.icons-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.icons-container .icons{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icons-container .icons i{
+    font-size: 3.5rem;
+    color: var(--blue);
+}
+
+.icons-container .icons h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.icons-container .icons p{
+    font-size: 1.4rem;
+    color: var(--light-color);
+}
+
+
+.newsletter{
+    background: url(Imagens/imagem.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.newsletter form{
+    max-width: 45rem;
+    margin-left: auto;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.newsletter form h3{
+    font-size: 2.2rem;
+    color: #fff;
+    padding-bottom: .7rem;
+    font-weight: normal;
+}
+
+.newsletter form .box{
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border-radius: .5rem;
+    text-transform: none;
+}
+
+.virtuais .virtuais-slider .box{
+    margin: 2rem 0;
+    width: 40rem;
+    border: 1px solid gray;
+}
+
+.virtuais .virtuais-slider .box:hover{
+    border: 1px solid rgb(93, 93, 93);
+}
+
+.virtuais .virtuais-slider .box .image{
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.virtuais .virtuais-slider .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.virtuais .virtuais-slider .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.virtuais .virtuais-slider .box .content{
+    padding: 1.5rem;
+}
+
+.virtuais .virtuais-slider .box .content h3{
+    font-size: 2.2rem;
+    color: var(--black);
+}
+
+.virtuais .virtuais-slider .box .content p{
+    font-size: 1.2rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+
+.virtuais .virtuais2-slider .box{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    border: 1px solid rgb(204, 204, 204);
+    margin: 1rem 0;
+}
+
+.virtuais .virtuais2-slider .box:hover{
+    border: 1px solid #000000;
+}
+
+.virtuais .virtuais2-slider .box .image img{
+    height: 8rem;
+}
+
+.virtuais .virtuais2-slider .box .content h3{
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.virtuais .virtuais2-slider .box .content .price{
+    font-size: 1rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+
+.virtuais .virtuais2-slider .box .content .stars i{
+    font-size: 1rem;
+    color: var(--blue);
+}
+
+
+
+.footer{
+    background-color: var(--black);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    font-size: 13px;
+    color: white;
+}
+
