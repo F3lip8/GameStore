@@ -112,6 +112,60 @@ window.onclick = function(event) {
   }
 }
 
+const product = [
+    {
+        id: 0,
+        image: 'Imagens/amongus.jpeg',
+        title: 'Among Us',
+    },
+    {
+        id: 1,
+        image: 'Imagens/raft.jpg',
+        title: 'Raft',
+    },  
+    {
+        id: 2,
+        image: 'Imagens/the-sims.jpeg',
+        title: 'The sims'
+    },
+]
+
+let searchSection = document.querySelector('.search-section');
+
+
+const categories = [...new Set(product.map((item) => {return item}))]
+document.getElementById('search-box').addEventListener('keyup', (e) => {
+    const searchData = e.target.value.toLowerCase();
+    const filteredData = categories.filter((item) => {
+        return(item.title.toLowerCase().includes(searchData))
+    })
+    displayItem(filteredData)
+});
+
+const showSearch = function(){
+    searchSection.classList.toggle('active');
+}
+
+document.getElementById('search-box').addEventListener('input', showSearch);
+
+const displayItem = (items) => {
+    document.getElementById('root').innerHTML = items.map((item) => {
+        var{image, title} = item;
+        return(
+            `<a href="#" class="card">
+                    <div class="image">
+                        <img src=${image} alt="">
+                    </div>
+                    <div class="content">
+                        <h3>${title}</h3>
+                    </div>
+                </a>`
+        )
+    }).join('')
+};
+displayItem(categories);
+
+
 
 let loginForm = document.querySelector('.login-form-container');
 
@@ -121,4 +175,11 @@ document.querySelector('#login-btn').onclick = () => {
 
 document.querySelector('#close-login-btn').onclick = () => {
     loginForm.classList.remove('active');
+}
+
+
+
+
+document.querySelector('#search').onclick = () => {
+    searchSection.classList.toggle('active');
 }
