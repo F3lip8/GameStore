@@ -23,7 +23,7 @@
             </form>
 
             <div class="icons">
-                <a href="#" class="fas fa-cart-shopping"></a>
+                <a id="cart-btn" class="fas fa-cart-shopping"></a>
                 <div id="login-btn" class="fas fa-user"></div>
             </div>
 
@@ -65,6 +65,68 @@
             <p>esqueceu a senha ? <a href="#">clique aqui</a></p>
             <p>já tem uma conta ? <a href="#">entrar</a></p>
         </form>
+
+    </div>
+
+
+    <div class="cart-container">
+        <div class="cart-content">
+            <h1>Carrinho</h1>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th class="table-head-item">Item</th>
+                        <th class="table-head-item second-col">Preço</th>
+                        <th class="table-head-item third-col">Quantidade</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr class="cart-product">
+                        <td>
+                            <div class="cart-product-image">
+                                <img src="Imagens/mario-bros-wonder.jpg">
+                            </div>
+                            <strong class="cart-product-title">Super Mario Brós Wonder</strong>
+                        </td>
+                        <td>
+                            <div class="price">R$115,00</div>
+                        </td>
+                        <td class="qtd">
+                            <input type="number" value="2" min="0" class="product-qtd-input">
+                            <button class="btn-cart remove-btn">Remover</button>
+                        </td>
+                    </tr>
+
+                    <tr class="cart-product">
+                        <td>
+                            <div class="cart-product-image">
+                                <img src="Imagens/pokemon-violet.jpg">
+                            </div>
+                            <strong class="cart-product-title">Pokemon Violet</strong>
+                        </td>
+                        <td>
+                            <div class="price">R$20,00</div>
+                        </td>
+                        <td class="qtd">
+                            <input type="number" value="1" min="0" class="product-qtd-input">
+                            <button class="btn-cart remove-btn">Remover</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="cart-total-container">
+                            <strong>Total</strong>
+                            <span>R$0,00</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <button class="btn">Finalizar Compra</button>
+        </div>
 
     </div>
 
@@ -628,23 +690,23 @@
 
                 <div class="swiper-slide box">
                     <div class="image">
-                        <a id="myBtn"><img src="Imagens/mario-bros-wonder.jpg" alt=""></a>
+                        <img class="img" src="Imagens/mario-bros-wonder.jpg" alt="">
                     </div>
                     <div class="content">
-                        <h3>Super Mario Brós Wonder</h3>
-                        <div class="price">115,00 <span>20,99</span></div>
-                        <a href="" class="btn">Adicionar ao carrinho</a>
+                        <h3 class="name">Super Mario Brós Wonder</h3>
+                        <div class="price">115,00</div>
+                        <a class="btn add-btn">Adicionar ao carrinho</a>
                     </div>
                 </div>
 
                 <div class="swiper-slide box">
                     <div class="image">
-                        <img src="Imagens/pokemon-violet.jpg" alt="">
+                        <img class="img" src="Imagens/pokemon-violet.jpg" alt="">
                     </div>
                     <div class="content">
-                        <h3>Pokemon Violet</h3>
-                        <div class="price">115,00 <span>20,99</span></div>
-                        <a href="" class="btn">Adicionar ao carrinho</a>
+                        <h3 class="name">Pokemon Violet</h3>
+                        <div class="price">115,00</div>
+                        <a class="btn add-btn">Adicionar ao carrinho</a>
                     </div>
                 </div>
 

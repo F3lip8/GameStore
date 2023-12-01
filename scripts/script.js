@@ -1,3 +1,6 @@
+
+// Carrosseis dos jogos fisicos //
+
 var swiper = new Swiper(".consoles-slider", {
     spaceBetween: 10,
     loop:true,
@@ -32,6 +35,10 @@ window.onscroll = () =>{
 }
 
 
+
+
+
+// Carroseis Dos jogos virtuais //
 
 var swiper = new Swiper(".virtuais-slider", {
     spaceBetween: 10,
@@ -72,6 +79,13 @@ var swiper = new Swiper(".virtuais2-slider", {
     },
 });
 
+
+
+
+
+
+// Slider Promoções  //
+
 var swiper = new Swiper(".home-slider", {
     centeredSlides: true,
     loop:true,
@@ -86,31 +100,10 @@ var swiper = new Swiper(".home-slider", {
   });
 
 
-// Get the modal
-var modal = document.getElementById("modal-mario");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// Lista dos produtos / Mecanismo de pesquisa //
 
 const product = [
     {
@@ -127,6 +120,12 @@ const product = [
         id: 2,
         image: 'Imagens/the-sims.jpeg',
         title: 'The sims'
+    },
+    {
+        id: 3,
+        image: 'Imagens/mario-wonder-banner.avif',
+        title: 'Super Mario Bros Wonder',
+        link: 'page-1.html'
     },
 ]
 
@@ -148,11 +147,13 @@ const showSearch = function(){
 
 document.getElementById('search-box').addEventListener('input', showSearch);
 
+
+
 const displayItem = (items) => {
     document.getElementById('root').innerHTML = items.map((item) => {
-        var{image, title} = item;
+        var{link, image, title} = item;
         return(
-            `<a href="#" class="card">
+            `<a href="${link}" class="card">
                     <div class="image">
                         <img src=${image} alt="">
                     </div>
@@ -167,6 +168,11 @@ displayItem(categories);
 
 
 
+
+
+
+// Ativação do Login Form //
+
 let loginForm = document.querySelector('.login-form-container');
 
 document.querySelector('#login-btn').onclick = () => {
@@ -175,4 +181,126 @@ document.querySelector('#login-btn').onclick = () => {
 
 document.querySelector('#close-login-btn').onclick = () => {
     loginForm.classList.remove('active');
+}
+
+
+
+// Ativação do Carrinho //
+
+let carrinho = document.querySelector('.cart-container');
+
+document.querySelector('#cart-btn').onclick = () => {
+    carrinho.classList.toggle('active');
+}
+
+document.querySelector('#close-login-btn').onclick = () => {
+    loginForm.classList.remove('active');
+}
+
+
+
+
+
+
+// Verificaçao //
+if (document.readyState == 'loading') {
+    document.addEventListener("DOMContentLoaded", ready);
+} else {
+    ready()
+}
+
+updateTotal()
+
+
+// Events //
+function ready() {
+    const removeProductButton = document.getElementsByClassName("remove-btn");
+    console.log(removeProductButton)
+    for (var i = 0; i < removeProductButton.length; i++) {
+        removeProductButton[i].addEventListener("click", RemoveProduct)   
+    }
+
+    const quantidyInputs = document.getElementsByClassName("product-qtd-input")
+    for (var i = 0; i < quantidyInputs.length; i++){
+        quantidyInputs[i].addEventListener("change", updateTotal)
+    }
+
+    const addToCartButton = document.getElementsByClassName("add-btn")
+    for (var i = 0; i < addToCartButton.length; i++) {
+        addToCartButton[i].addEventListener("click", addProductToCart)
+    }
+}
+
+
+
+
+ // Função que remove produto //
+function RemoveProduct(event) {
+    event.target.parentElement.parentElement.remove()
+    updateTotal()
+}
+
+
+
+
+// Atualização do preço total //
+function updateTotal() {
+    let totalAmount = 0
+    const cartProducts = document.getElementsByClassName("cart-product");
+
+    for (var i = 0; i < cartProducts.length; i++) { 
+        //console.log(cartProducts[i])
+        const productPrice = cartProducts[i].getElementsByClassName("price")[0].innerText.replace("R$", "").replace(",", ".")
+        const productQuantidy = cartProducts[i].getElementsByClassName("product-qtd-input")[0].value
+    
+
+        totalAmount += (productPrice * productQuantidy)
+    }
+
+    totalAmount = totalAmount.toFixed(2)
+    totalAmount = totalAmount.replace(".", ",")
+    document.querySelector(".cart-total-container span").innerText = "R$" + totalAmount;
+}
+
+
+
+// Adicionar produto //
+function addProductToCart(event) {
+    const button = event.target
+    const productInfo = button.parentElement.parentElement
+    const productImage = productInfo.getElementsByClassName("img")[0].src
+    const productTitle = productInfo.getElementsByClassName("name")[0].innerHTML
+    const productPrice = productInfo.getElementsByClassName("price")[0].innerHTML
+
+    const productsCartName = document.getElementsByClassName("cart-product-title")
+    for (var i; i < productsCartName.length; i++){
+        console.log(productsCartName[i].innerHTML)
+        if (productsCartName[i].innerHTML == productTitle) {
+            console.log("ENTROU")
+            productsCartName[i].parentElement.parentElement.getElementsByClassName("product-qtd-input")[0].value++
+        }
+    }
+
+    let newCartProduct = document.createElement("tr")
+    newCartProduct.classList.add("cart-product")
+
+    newCartProduct.innerHTML = 
+    `<td>
+        <div class="cart-product-image">
+            <img src="${productImage}" alt="${productTitle}">
+        </div>
+        <strong>${productTitle}</strong>
+    </td>
+    <td>
+        <div class="price">${productPrice}</div>
+    </td>
+    <td class="qtd">
+        <input type="number" value="1" min="0" class="product-qtd-input">
+        <button class="btn-cart remove-btn">Remover</button>
+    </td>`
+
+    const tableBody = document.querySelector(".cart-table tbody")
+    tableBody.append(newCartProduct)
+
+    updateTotal()
 }
