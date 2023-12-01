@@ -193,8 +193,8 @@ document.querySelector('#cart-btn').onclick = () => {
     carrinho.classList.toggle('active');
 }
 
-document.querySelector('#close-login-btn').onclick = () => {
-    loginForm.classList.remove('active');
+document.querySelector('#close-cart-btn').onclick = () => {
+    carrinho.classList.remove('active');
 }
 
 
@@ -222,7 +222,7 @@ function ready() {
 
     const quantidyInputs = document.getElementsByClassName("product-qtd-input")
     for (var i = 0; i < quantidyInputs.length; i++){
-        quantidyInputs[i].addEventListener("change", updateTotal)
+        quantidyInputs[i].addEventListener("change", CheckIfInputIsNull)
     }
 
     const addToCartButton = document.getElementsByClassName("add-btn")
@@ -231,6 +231,12 @@ function ready() {
     }
 }
 
+function CheckIfInputIsNull(event) {
+    if (event.target.value === '0') {
+        event.target.parentElement.parentElement.remove()
+    }
+    updateTotal()
+}
 
 
 
@@ -273,11 +279,10 @@ function addProductToCart(event) {
     const productPrice = productInfo.getElementsByClassName("price")[0].innerHTML
 
     const productsCartName = document.getElementsByClassName("cart-product-title")
-    for (var i; i < productsCartName.length; i++){
-        console.log(productsCartName[i].innerHTML)
-        if (productsCartName[i].innerHTML == productTitle) {
-            console.log("ENTROU")
+    for (var i = 0; i < productsCartName.length; i++){
+        if (productsCartName[i].innerHTML === productTitle) {
             productsCartName[i].parentElement.parentElement.getElementsByClassName("product-qtd-input")[0].value++
+            return
         }
     }
 
@@ -289,7 +294,7 @@ function addProductToCart(event) {
         <div class="cart-product-image">
             <img src="${productImage}" alt="${productTitle}">
         </div>
-        <strong>${productTitle}</strong>
+        <strong class="cart-product-title">${productTitle}</strong>
     </td>
     <td>
         <div class="price">${productPrice}</div>
@@ -301,6 +306,9 @@ function addProductToCart(event) {
 
     const tableBody = document.querySelector(".cart-table tbody")
     tableBody.append(newCartProduct)
-
     updateTotal()
+    newCartProduct.getElementsByClassName("product-qtd-input")[0].addEventListener("change", CheckIfInputIsNull)
+    newCartProduct.getElementsByClassName("remove-btn")[0].addEventListener("click", RemoveProduct)
+    
+
 }

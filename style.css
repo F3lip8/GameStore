@@ -188,15 +188,15 @@ section{
 
 .cart-container{
     border-collapse: collapse;
-    right: 0;
-    max-width: 400px;
+    right: -105%;
+    width: 400px;
+    height: 100%;
     margin: 0 auto;
     padding: 0 16px;
     position: fixed;
     z-index: 10000;
     background-color: #fff;
     border: 1px solid gray;
-    overflow: scroll;
 }
 
 .cart-container.active{
@@ -204,7 +204,10 @@ section{
 }
 
 .cart-content {
+    width: 100%;
+    height: 100%;
     margin: 20px;
+    overflow: scroll;
 }
 
 .cart-product td {
@@ -259,6 +262,14 @@ section{
     text-align: end;
     padding: 6px 16px 0 0;
     font-size: 15px;
+}
+
+#close-cart-btn{
+    color: black;
+    position: absolute;
+    top: 1.5rem; right: 2.5rem;
+    font-size: 10px;
+    cursor: pointer;
 }
 
 
