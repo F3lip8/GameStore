@@ -41,6 +41,11 @@ section{
     padding: 5rem 9%;
 }
 
+
+
+
+/* HEADER */
+
 .header .header-1{
     background-color: var(--dark-blue);
     padding: 15px;
@@ -166,6 +171,11 @@ section{
 
 
 
+
+
+
+
+
 /* CARRINHO */
 
 
@@ -205,7 +215,7 @@ section{
 
 .cart-content {
     width: 100%;
-    height: 100%;
+    height: 450px;
     margin: 20px;
     overflow: scroll;
 }
@@ -240,7 +250,7 @@ section{
 }
 
 .cart-product-image {
-    width: 120px;
+    width: 170px;
     height: 70px;
 }
 
@@ -279,6 +289,11 @@ section{
 
 
 
+
+
+
+
+/* LOGIN */
 
 .login-form-container{
     display: flex;
@@ -373,6 +388,20 @@ section{
     cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* PESQUISA  */
+
 .search{
     width: 100%;
     height: 100%;
@@ -388,12 +417,8 @@ section{
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    top: -150%;
+    top: -105%;
     z-index: 10000;
-}
-
-.search-section.active{
-    top: 0;
 }
 
 .search-section.active{
@@ -406,6 +431,7 @@ section{
     background-color: #fff;
     display: flex;
     border: 1px solid gray !important;
+    cursor: pointer;
 }
 
 .search-section .card:hover{
@@ -435,6 +461,9 @@ section{
 
 
 
+
+/* SLIDER DOS CONSOLES */
+
 .consoles .consoles-slider .box{
     width: 250px;
     margin: 0 1.5rem;
@@ -462,6 +491,7 @@ section{
 }
 
 .consoles .consoles-slider .box .content .name{
+    font-size: 15px;
     color: var(--black);
 }
 
@@ -471,11 +501,6 @@ section{
     padding-top: 1rem;
 }
 
-.consoles .consoles-slider .box .content .price span{
-    font-size: 1.5rem;
-    color: var(--light-color);
-    text-decoration: line-through;
-}
 
 
 .swiper-button-next,
@@ -497,6 +522,20 @@ section{
     color: #fff !important;
     background: var(--black);
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SLIDER DOS DESTAQUES */
 
 .home{
     padding: 0;
@@ -555,27 +594,43 @@ section{
     border-radius: 5px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PAGE MODAL */
+
 .modal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 10000; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
     scroll-margin-block: 50px;
   }
   
-  /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
+    margin: 5% auto; 
     padding: 30px;
     border: 1px solid #888;
-    width: 70% /* Could be more or less, depending on screen size */
+    width: 70%;
 }
 
 .modal .modal-content .content-geral{
@@ -607,7 +662,7 @@ section{
     padding-top: 20px;
 }
   
-  /* The Close Button */
+
 .close {
     color: #aaa;
     float: right;
@@ -622,50 +677,20 @@ section{
     cursor: pointer;
 }
 
-.destaques{
-    background: url(Imagens/mario-background2.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
 
-.destaques .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
 
-.destaques .row .content{
-    flex: 1 1 42rem;
-}
 
-.destaques .row .game-slider{
-    flex: 1 1 42rem;
-    text-align: center;
-    margin-top: 2rem;
-}
 
-.destaques .row .game-slider a img{
-    height: 25rem;
-    border-radius: 4px;
-}
 
-.destaques .row .game-slider a:hover img{
-    transform: scale(.9);
-}
 
-.destaques .row .content h3{
-    color: #fff;
-    font-size: 4.5rem;
-}
 
-.destaques .row .content p{
-    color: rgb(154, 153, 153);
-    font-size: 1.5rem;
-    line-height: 2;
-    padding: 1rem 0;
-}
+
+
+
+
+/* ICONS */
+
 
 .icons-container{
     display: grid;
@@ -696,8 +721,14 @@ section{
 }
 
 
+
+
+
+
+/* NEWSLETTER  */
+
 .newsletter{
-    background: url(Imagens/imagem.jpg) no-repeat;
+    background: url(Imagens/games-background.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -726,6 +757,12 @@ section{
     border-radius: .5rem;
     text-transform: none;
 }
+
+
+
+
+
+/* SLIDER DOS JOGOS VIRTUAIS  */
 
 .virtuais .virtuais-slider .box{
     margin: 2rem 0;
@@ -804,9 +841,17 @@ section{
 
 
 
+
+
+
+
+
+/* FOOTER */
+
+
 .footer{
     background-color: var(--black);
-    height: 60px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -817,47 +862,87 @@ footer p{
     color: white;
 }
 
+
+
+
+
+
+
+
+
 /*   PAGE-1   */
+
+.modal{
+    display: none; 
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    scroll-margin-block: 50px;
+  }
+  
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 30px;
+    border: 1px solid #888;
+    width: 70%;
+}
+
+.modal .modal-content .content-geral{
+    display: flex;
+}
+
+.modal .modal-content .content{
+    padding: 20px;
+}
+
+.modal .modal-content .image{
+    padding: 20px;
+}
+
+.modal .modal-content .image img{
+    height: 400px;
+}
+
+.modal .modal-content .botoes{
+    width: 100%;
+}
+
+.modal .modal-content .botoes a{
+    width: 90%;
+    text-align: center;
+}
+
+.modal .modal-content .detalhes{
+    padding-top: 20px;
+}
+  
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .page-1_sections{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.page-1_sections .page-1-image{
-    width: 500px;
-}
-
-.page-1_sections .page-1-image .image{
-    width: 355px;
-    margin: 10px;
-}
-
-.page-1_sections .page-1-image .image img{
-    height: 200px;
-    border-radius: 5px;
-}
-
-.page-1_sections .page-1-image .small-images{
-    width: 313px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-around !important;
-}
-
-.page-1_sections .page-1-image .small-images .box{
-    width: 50px;
-    height: 25px;
-    border-radius: 4px;
-    border: 1px solid gray !important;
-    overflow: hidden;
-}
-
-.page-1_sections .page-1-image .small-images .box img{
-    width: 100px;
-    height: 50px;
-    cursor: pointer;
 }
 
 .page-1_sections .page-1-content{
@@ -892,13 +977,14 @@ footer p{
     text-decoration: line-through;
 }
 
-.page-1_sections .page-1-content .content .botoes{
+.page-1_sections .page-1-content .content .btn{
+    text-align: center;
     width: 300px;
 }
 
-.page-1_sections .page-1-content .content .botoes a{
-    width: 100%;
+.page-1_sections .page-1-content .content .btn-carrinho{
     text-align: center;
+    width: 300px;
 }
 
 .page-1_sections .page-1-content .content .icons-container{
@@ -932,4 +1018,182 @@ footer p{
 
 .page-1-contents .descricao p{
     font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+/* SLIDER DO MODAL 1 */
+
+.page-1-slider{
+    width: 400px;
+}
+
+.page-1-slider .slide .content{
+    display: flex;
+    justify-content: center;
+}
+
+.page-1-slider .slide .content img{
+    width: 355px;
+}
+
+
+
+
+
+/* MODAL 2 */
+
+.page-2_sections{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.page-2_sections .page-2-content{
+    display: flex;
+    padding: 0;
+}
+
+.page-2_sections .page-2-content .image{
+    margin: 0 10px;
+}
+
+.page-2_sections .page-2-content .image img{
+    height: 200px;
+}
+
+.page-2_sections .page-2-content .content{
+    width: 25%;
+}
+
+.page-2_sections .page-2-content .content h1{
+    font-size: 20px;    
+}
+
+.page-2_sections .page-2-content .content .price{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.page-2_sections .page-2-content .content .price span{
+    font-size: 15px;
+    color: var(--light-color);
+    text-decoration: line-through;
+}
+
+.page-2_sections .page-2-content .content .btn{
+    text-align: center;
+    width: 300px;
+}
+
+.page-2_sections .page-2-content .content .btn-carrinho{
+    text-align: center;
+    width: 300px;
+}
+
+.page-2_sections .page-2-content .content .icons-container{
+    display: flex;
+    margin: 15px 0;
+    padding: 0;
+    width: 300px;
+    height: 50px;
+}
+
+.page-2_sections .page-2-content .content .icons-container .icons{
+    width: 100px;
+}
+
+.page-2_sections .page-2-content .content .icons-container .icons i{
+    font-size: 20px;
+    margin: 0;
+}
+
+.page-2_sections .page-2-content .content .icons-container .icons p{
+    font-size: 10px;
+}
+
+.page-2-contents .descricao{
+    margin: 20px 100px;
+}
+
+.page-2-contents .descricao h1{
+    font-size: 30px;
+}
+
+.page-2-contents .descricao p{
+    font-size: 12px;
+}
+
+.page-2-images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page-2-images .images{
+    display: flex;
+}
+
+.page-2-images .box{
+    width: 250px;
+    margin: 20px 10px;
+}
+
+.page-2-images .box img{
+    width: 250px;
+}
+
+
+.close2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close3 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close3:hover,
+.close3:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-2-contents .descricao{
+    margin: 20px 100px;
+}
+
+.page-2-contents .descricao h1{
+    font-size: 30px;
+}
+
+.page-2-contents .descricao p{
+    font-size: 12px;
+}
+  
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
