@@ -200,7 +200,7 @@ section{
     border-collapse: collapse;
     right: -105%;
     width: 400px;
-    height: 100%;
+    height: 530px;
     margin: 0 auto;
     padding: 0 16px;
     position: fixed;
@@ -215,7 +215,7 @@ section{
 
 .cart-content {
     width: 100%;
-    height: 450px;
+    height: 500px;
     margin: 20px;
     overflow: scroll;
 }
